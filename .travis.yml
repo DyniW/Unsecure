@@ -1,12 +1,27 @@
+# Juste si la branche est develop
+# branches:
+#  only:
+#    - develop
+
+# ou except
+
+# Spécifier le langage de votre appli
 language: php
 
+# Charger docker dans l'instance
 services:
-- docker
+  - docker
 
-script:
-- docker run -v $PWD:/app phpqa/php-cs-fixer fix . --dry-run
+# Lancer votre / vos commandes (ex. : linter)
+script: 
+  - docker run -v $PWD:/app phpqa/php-cs-fixer fix . --dry-run
+#  - command2
+#  - command3
 
+# Envoie de notifications sur slack
 notifications:
   slack:
     rooms:
-    - ipssi-d19-1:XIkCM8GcbSqwCwjGsbrutat0
+      - ipssi-d19-1:XIkCM8GcbSqwCwjGsbrutat0#travis
+    on_success: change
+    on_failure: always
