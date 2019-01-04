@@ -9,4 +9,4 @@ script:
 notifications:
   slack:
     rooms:
-    - ipssi-d19-1:3U0tNTwfovSqXR04sBm4G5HQ#memo-riz
+    - ipssi-d19-1:XIkCM8GcbSqwCwjGsbrutat0
